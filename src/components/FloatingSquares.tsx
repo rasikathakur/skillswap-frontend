@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function FloatingSquares() {
   const squares = Array.from({ length: 12 });
 

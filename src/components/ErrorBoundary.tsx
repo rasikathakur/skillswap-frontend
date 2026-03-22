@@ -31,6 +31,6 @@ export default class ErrorBoundary extends React.Component<Props, State> {
       );
     }
 
-    return this.props.children as JSX.Element;
+    return this.props.children as React.ReactNode;
   }
 }

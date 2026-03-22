@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const conversations = [
   { id: 'u1', name: 'John Doe', last: 'Hey, are you free tomorrow?', initials: 'J' },

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -39,7 +39,6 @@ export function DebuggingRaceRun() {
   const navigate = useNavigate();
   const { state: navState } = useLocation() as any;
   const [remaining, setRemaining] = useState(30);
-  const [running, setRunning] = useState(true);
   const [violations, setViolations] = useState<string[]>([]);
   const [allowedSubmit, setAllowedSubmit] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -52,7 +51,6 @@ export function DebuggingRaceRun() {
   const [totalLines, setTotalLines] = useState(0);
   const [optionMapping, setOptionMapping] = useState<{ [key: string]: string }>({});
   const [explanation, setExplanation] = useState('');
-  const [loading, setLoading] = useState(true);
   const [lastIsCorrect, setLastIsCorrect] = useState<boolean | null>(null);
   const intervalRef = useRef<number | null>(null);
 
@@ -99,8 +97,6 @@ export function DebuggingRaceRun() {
         setLines(fallback.split('\n'));
         setCorrectCause('Missing Return');
         setExpectedLineNumberOneBased(2);
-      } finally {
-        setLoading(false);
       }
     })();
 
@@ -114,7 +110,6 @@ export function DebuggingRaceRun() {
       setRemaining((r) => {
         if (r <= 1) {
           window.clearInterval(intervalRef.current || undefined);
-          setRunning(false);
           setAllowedSubmit(true);
           return 0;
         }
@@ -141,7 +136,6 @@ export function DebuggingRaceRun() {
         setViolations((v) => [...v, 'visibilitychange']);
         // stop the run early
         if (intervalRef.current) { window.clearInterval(intervalRef.current); }
-        setRunning(false);
         setAllowedSubmit(true);
         setRemaining(0);
       }

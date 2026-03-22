@@ -155,7 +155,6 @@ function ProfilesWidget({ profiles, onAdd, onRemove, readOnly }: { profiles: { i
 }
 
 export default function ProfilePage({ readOnly = false, initialData = undefined }: { readOnly?: boolean; initialData?: any } = {}) {
-  const { theme } = useTheme(); // Keeping theme as it might be used by Sidebar or other components passed in
   const navigate = useNavigate();
   const currentUserId = localStorage.getItem('user_id') || '';
   const [avatar, setAvatar] = useState<string | null>(initialData?.avatar ?? null);
@@ -166,7 +165,6 @@ export default function ProfilePage({ readOnly = false, initialData = undefined 
   const [email, setEmail] = useState(initialData?.email ?? '');
   const [phone, setPhone] = useState(initialData?.phone ?? '');
   const [rank, setRank] = useState<string | number>('Unranked');
-  const [totalScore, setTotalScore] = useState<string | number>('Not calculated');
   const [isLoading, setIsLoading] = useState(true);
   const [pendingReviews, setPendingReviews] = useState<any[]>([]);
   const [showPopup, setShowPopup] = useState(false);
