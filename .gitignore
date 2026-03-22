@@ -17,6 +17,10 @@ dist-ssr
 .env.*
 !.env.example
 
+# Python virtual environments and cache
+skillswapenv/
+__pycache__/
+
 # Secrets and key material
 *.pem
 *.key
