@@ -164,7 +164,6 @@ export default function ProfilePage({ readOnly = false, initialData = undefined 
   const [email, setEmail] = useState(initialData?.email ?? '');
   const [phone, setPhone] = useState(initialData?.phone ?? '');
   const [rank, setRank] = useState<string | number>('Unranked');
-  const [totalScore, setTotalScore] = useState<string | number>('Not calculated');
   const [isLoading, setIsLoading] = useState(true);
   const [pendingReviews, setPendingReviews] = useState<any[]>([]);
   const [showPopup, setShowPopup] = useState(false);
@@ -203,7 +202,6 @@ export default function ProfilePage({ readOnly = false, initialData = undefined 
         setDepartment(p.department || department);
         setPhone(p.phone_number || phone);
         setRank(p.rank || 'Unranked');
-        setTotalScore(p.total_score || 0);
 
         // profiles stored as object { key: url }
         const profs: { id: string; key: string; url: string }[] = [];
