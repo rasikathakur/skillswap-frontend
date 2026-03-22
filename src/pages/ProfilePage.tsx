@@ -1,7 +1,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import Sidebar from '../components/Sidebar';
-import { useTheme } from '../theme/ThemeProvider';
 import { useNavigate } from 'react-router-dom';
 import ScheduleCard from '../components/ScheduleCard';
 import { Trophy, Loader2, MessageSquare, ArrowRight } from 'lucide-react';
@@ -165,6 +164,7 @@ export default function ProfilePage({ readOnly = false, initialData = undefined 
   const [email, setEmail] = useState(initialData?.email ?? '');
   const [phone, setPhone] = useState(initialData?.phone ?? '');
   const [rank, setRank] = useState<string | number>('Unranked');
+  const [totalScore, setTotalScore] = useState<string | number>('Not calculated');
   const [isLoading, setIsLoading] = useState(true);
   const [pendingReviews, setPendingReviews] = useState<any[]>([]);
   const [showPopup, setShowPopup] = useState(false);

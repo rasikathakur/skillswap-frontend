@@ -1,9 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-
-
-
 type Q = {
   id: string;
   question: string;

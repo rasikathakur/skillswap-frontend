@@ -12,7 +12,6 @@ import Sidebar from './components/Sidebar';
 import ChatView from './pages/ChatView';
 import ReadOnlyProfile from './pages/ReadOnlyProfile';
 import TestsPage from './pages/Tests';
-import ConceptMatch from './pages/ConceptMatch';
 import ConceptMatchResult from './pages/ConceptMatchResult';
 import DebuggingRace, { DebuggingRaceRun } from './pages/DebuggingRace';
 import TestRunner from './pages/TestRunner';

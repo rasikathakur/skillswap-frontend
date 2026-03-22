@@ -44,6 +44,7 @@ export function CodeRearrangementRun() {
   const navigate = useNavigate();
   const { state } = useLocation() as any;
   const [remaining, setRemaining] = useState(60);
+  const [running, setRunning] = useState(true);
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
   const [originalLines, setOriginalLines] = useState<string[]>([]);
   const [currentLines, setCurrentLines] = useState<string[]>([]);
